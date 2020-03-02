@@ -2,11 +2,11 @@
 - hosts: master
   become: yes
   roles: 
-   - java
-   - git
-   - jenkins
-   - terraform
-   - azurecli
-   - maven
-   - ansible
+  #  - java
+  #  - git
+  #  - jenkins
+  #  - terraform
+  #  - azurecli
+  #  - maven
+  #  - ansible
    - docker
