@@ -13,9 +13,9 @@
 - name:
   pip:
     name: ansible
-- name:
-  pip:
-    name: docker-py
+# - name:
+#   pip:
+#     name: docker-py
 
 - name: install yum-utils
   yum:
