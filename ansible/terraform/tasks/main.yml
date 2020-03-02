@@ -1,0 +1,23 @@
+---
+# tasks file for terraform
+
+- name: install wget
+  yum:
+   name: wget
+   state: present
+
+- name: install unzip
+  yum:
+   name: unzip
+   state: present
+
+- name: get terraform
+  get_url:
+   url: https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+   dest: /etc/terraform11
+
+- name: unzip
+  unarchive:
+   src: /etc/terraform11
+   dest: /usr/bin/
+   remote_src: yes

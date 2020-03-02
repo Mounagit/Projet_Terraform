@@ -24,3 +24,5 @@ variable "nameNIC" {}
 variable "nameipconf" {}
 
 variable "name_master" {}
+
+variable "testvar" {}

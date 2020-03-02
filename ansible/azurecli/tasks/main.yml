@@ -1,0 +1,43 @@
+---
+# tasks file for azurecli
+
+- name: install python3
+  yum:
+   name: https://centos7.iuscommunity.org/ius-release.rpm
+   state: present
+
+- name: update
+  yum:
+   name: '*'
+   state: latest
+
+- name: install python3
+  yum:
+   name: python36u,python36u-libs,python36u-devel,python36u-pip
+   state: present
+
+- name: import cli
+  shell:
+   cmd: sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+- name: create file info
+  file:
+   path: /etc/yum.repos.d/azure-cli.repo
+   state: touch
+
+- name: info locales
+  lineinfile:
+   path: /etc/yum.repos.d/azure-cli.repo
+   line: "{{ item }}"
+  with_items:
+   - "[azure-cli]"
+   - "name=Azure CLI"
+   - "baseurl=https://packages.microsoft.com/yumrepos/azure-cli"
+   - "enabled=1"
+   - "gpgcheck=1"
+   - "gpgkey=https://packages.microsoft.com/keys/microsoft.asc"
+
+- name: install cli
+  yum:
+   name: azure-cli
+   state: present

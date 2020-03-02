@@ -1,0 +1,15 @@
+---
+# tasks file for git
+
+- name: supprimer GIT present
+  yum:
+   name: git
+   state: absent
+- name: dl pkg
+  yum:
+   name: https://centos7.iuscommunity.org/ius-release.rpm
+   state: present
+- name: install git2.16
+  yum:
+   name: git2u-all
+   state: present

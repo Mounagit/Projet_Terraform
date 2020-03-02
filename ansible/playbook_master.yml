@@ -1,0 +1,9 @@
+---
+- hosts: master
+  become: yes
+  roles: 
+   - java
+   - git
+   - jenkins
+   - terraform
+   - azurecli
