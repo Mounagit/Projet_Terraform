@@ -12,5 +12,3 @@ nameNIC= "NIC_master"
 nameipconf= "IP_conf_master"
 
 name_master= "VM_master"
-
-testvar= "Test"

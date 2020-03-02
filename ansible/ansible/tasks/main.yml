@@ -1,0 +1,17 @@
+---
+# tasks file for ansible
+
+- name: 
+  yum:
+   name: epel-release
+   state: present
+- name:
+  yum:
+   name: python-pip
+   state: present
+- name:
+  pip:
+   name: ansible
+- name:
+  pip: 
+   name: docker-py
